@@ -34,8 +34,15 @@ var employees = [{
 // Code here
 
 
-
-
+function employeeUpdater(){
+  for(let i = 0; i < employees.length; i++){
+    if(employees[i].firstName == "Theo")
+      {   employees.splice(i, 1);    }
+    else if(employees[i].firstName == "Lorie")
+      {   employees[i].department = "HR";   } 
+  }
+  return employees;
+}
 
 
 // The array below represents IDs tied to reported workplace accidents. An employee accidentally entered in duplicates to array, making it look as though there are more accidents this year than there actually are.
@@ -48,14 +55,16 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
 // Code here
 
 
-
-
-
-
-
-
-
-
+function removeDuplicates(){
+  for(let i = 0; i < workplaceAccidents.length; i++){
+    for(let j = 0; j < workplaceAccidents.length; j++){
+      if(workplaceAccidents[i] === workplaceAccidents[j]){
+        workplaceAccidents.splice(i, 1);
+      }
+    }
+  }
+  return workplaceAccidents;
+}
 
 
 var cat = {
@@ -71,3 +80,7 @@ var cat = {
 
 // You need to feed on of Fluffy's friends, Grumpy. Navigate the nested arrays and objects to:
 // 1. invoke the 'feed' method.
+
+var grumpyActivity;
+grumpyActivity = cat.catFriends[0].activities[1];
+console.log(grumpyActivity);
